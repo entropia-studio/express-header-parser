@@ -1,0 +1,57 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timestamp microservice</title>
+    <meta name="description" content="Timestamp microservice FCC">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        API Project: Timestamp microservice
+      </h1>      
+    </header>
+    <main>
+      <ol>
+        <li>The API endpoint is GET [project_url]/api/timestamp/:date_string?</li>
+        <li>A date string is valid if can be successfully parsed by new Date(date_string).
+Note that the unix timestamp needs to be an <b>integer</b> (not a string) specifying <b>milliseconds</b>.
+In our test we will use date strings compliant with ISO-8601 (e.g. "2016-11-20") because this will ensure an UTC timestamp.</li>
+        <li>If the date string is <b>empty</b> it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.
+</li>
+        <li>If the date string is <b>valid</b> the api returns a JSON having the structure<br/>
+{"unix": &lt;date.getTime()&qt;, "utc" : &lt;date.toUTCString()&qt; }<br/>
+e.g. {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}
+</li>
+        <li>If the date string is <b>invalid</b> the api returns a JSON having the structure <br/>
+{"error" : "Invalid Date" }.</li>
+      </ol>
+      <p>
+        <b>Example Usage:</b>
+      </p>
+      <a href="./api/timestamp/2018-06-04">[project url]/api/timestamp/2018-06-04</a><br/>
+      <a href="./api/timestamp/1528070400000">[project url]/api/timestamp/1528070400000</a><br/>
+      <p>
+        <b>Example Output:</b>
+      </p>
+      <p>{"unix":1528070400000,"utc":"Mon, 04 Jun 2018 00:00:00 GMT"}</p>
+    </main>
+    <footer>
+      Coded by <a href="https://codepen.io/entropia-studio" target="_blank">Entropia Studio</a>!
+    </footer>
+  </body>
+</html>
