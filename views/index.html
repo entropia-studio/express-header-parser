@@ -10,8 +10,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Timestamp microservice</title>
-    <meta name="description" content="Timestamp microservice FCC">
+    <title>API Project: Request Header Parser Microservice</title>
+    <meta name="description" content="API Project: Request Header Parser Microservice
+ FCC">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,33 +23,25 @@
   <body>
     <header>
       <h1>
-        API Project: Timestamp microservice
+       API Project: Request Header Parser Microservice<br/>
+       User Story:
       </h1>      
     </header>
     <main>
       <ol>
-        <li>The API endpoint is GET [project_url]/api/timestamp/:date_string?</li>
-        <li>A date string is valid if can be successfully parsed by new Date(date_string).
-Note that the unix timestamp needs to be an <b>integer</b> (not a string) specifying <b>milliseconds</b>.
-In our test we will use date strings compliant with ISO-8601 (e.g. "2016-11-20") because this will ensure an UTC timestamp.</li>
-        <li>If the date string is <b>empty</b> it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.
-</li>
-        <li>If the date string is <b>valid</b> the api returns a JSON having the structure<br/>
-{"unix": &lt;date.getTime()&qt;, "utc" : &lt;date.toUTCString()&qt; }<br/>
-e.g. {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}
-</li>
-        <li>If the date string is <b>invalid</b> the api returns a JSON having the structure <br/>
-{"error" : "Invalid Date" }.</li>
-      </ol>
+        <li>I can get the IP address, preferred languages (from header Accept-Language)
+and system infos (from header User-Agent) for my device.
+        </li>
       <p>
         <b>Example Usage:</b>
       </p>
-      <a href="./api/timestamp/2018-06-04">[project url]/api/timestamp/2018-06-04</a><br/>
-      <a href="./api/timestamp/1528070400000">[project url]/api/timestamp/1528070400000</a><br/>
+      <a href="./api/whoami">[project url]/api/whoami</a><br/>
       <p>
         <b>Example Output:</b>
       </p>
-      <p>{"unix":1528070400000,"utc":"Mon, 04 Jun 2018 00:00:00 GMT"}</p>
+      <p>{"ipaddress":"127.0.0.1",
+          "language":"en-US,en;q=0.5",
+          "software":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36"}</p>
     </main>
     <footer>
       Coded by <a href="https://codepen.io/entropia-studio" target="_blank">Entropia Studio</a>!
