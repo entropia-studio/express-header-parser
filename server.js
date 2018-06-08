@@ -8,7 +8,9 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+
 app.get("/api/whoami",(request,response) => {
+
     var jsonResponse = {}
     console.log("language",request.headers["accept-language"])
     jsonResponse = Object.assign({
@@ -20,3 +22,4 @@ app.get("/api/whoami",(request,response) => {
 })
 
 app.listen(8080,'localhost')
+
