@@ -12,10 +12,10 @@ app.get("/", function (request, response) {
 app.get("/api/whoami",(request,response) => {
 
     var jsonResponse = {}
-    console.log("language",request.headers["accept-language"])
+    
     jsonResponse = Object.assign({
         "ipaddress": request.ip,
-        "language" : request.acceptsLanguages,
+        "language" : request.headers["accept-language"],
         "software" : request.headers["user-agent"]
     })
     response.status(200).send(jsonResponse)
